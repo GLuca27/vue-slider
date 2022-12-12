@@ -5,14 +5,14 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-        currentSlideIndex: 0;
-      slides: {
+      currentSlideIndex: 0,
+      slides: 
           [
                 {
                     image: 'img/01.webp',
                     title: 'Marvel\'s Spiderman Miles Morale',
                     text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
-                }, 
+                },
                 {
                     image: 'img/02.webp',
                     title: 'Ratchet & Clank: Rift Apart',
@@ -33,32 +33,24 @@ createApp({
                     title: "Marvel's Avengers",
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 }
-            ];
+            ],
       }
-    }
-  }
-}).mount('#app')
-
-console.log(slides);
-
-createApp({
-    data() {
-      return {
-      }
-    };
+    },
     methods: {
         nextSlide() {
-            if(this.currentSlideIndex === this.slides.lenght - 1)
-               this.currentSlideIndex = 0;
-        } else {
-            this.currentSlideIndex++;
-        },
+            if(this.currentSlideIndex === this.slides.lenght - 1){
+                this.currentSlideIndex = 0;
+            } else {
+                this.currentSlideIndex++;
+            }
+               
+        } ,
         prevSlide() {
-            if(this.currentSlideIndex === this.slides.lenght - 1)
-               this.currentSlideIndex = 0;
-        } else {
-            this.currentSlideIndex--;
-        }
-    },
-    
-  }).mount('#app')
+            if(this.currentSlideIndex === this.slides.lenght - 1){
+                this.currentSlideIndex = 0;
+            } else {
+                this.currentSlideIndex--;
+            }              
+        } 
+    }
+}).mount('#app')
